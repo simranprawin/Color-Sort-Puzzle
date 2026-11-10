@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff5f8">
+    <title>Color Sort Puzzle</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <a href="#" class="logo">
+                <span class="logo-icon">🧪</span>
+                <span>Color Sort</span>
+            </a>
+
+            <div class="header-label">
+                <span class="online-dot"></span>
+                Puzzle Time
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <main>
+            <section class="intro">
+                <span class="eyebrow">✨ RELAX • THINK • PLAY</span>
+
+                <h1>Color Sort <span>Puzzle</span></h1>
+
+                <p>
+                    Sort the colorful liquids into separate bottles.
+                    One color in each bottle!
+                </p>
+            </section>
+
+            <!-- Level and progress -->
+            <section class="level-section">
+                <div class="level-info">
+                    <div>
+                        <span class="small-label">YOUR JOURNEY</span>
+                        <h2>Level <span id="level">1</span></h2>
+                    </div>
+
+                    <div class="progress-info">
+                        <span id="progressText">Getting started!</span>
+                        <span>🌸</span>
+                    </div>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon pink">👣</div>
+                    <div>
+                        <span class="stat-label">MOVES</span>
+                        <strong id="moves">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">🏆</div>
+                    <div>
+                        <span class="stat-label">BEST MOVES</span>
+                        <strong id="bestMoves">--</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon yellow">🎨</div>
+                    <div>
+                        <span class="stat-label">COLORS</span>
+                        <strong id="colorCount">3</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Game area -->
+            <section class="game-card">
+
+                <div class="game-heading">
+                    <div>
+                        <h2>Let's Play!</h2>
+                        <p>Drag a bottle onto another to pour!</p>
+                    </div>
+
+                    <div class="game-sparkle">✨</div>
+                </div>
+
+                <!-- Bottles are created here by JavaScript -->
+                <div id="tubeBoard" class="tube-board"></div>
+
+                <!-- Hint -->
+                <div class="hint-box" id="hint">
+                    💡 Select a bottle and pour its top color into another bottle.
+                </div>
+
+                <!-- Controls -->
+                <div class="game-controls">
+
+                    <button type="button" class="control-btn undo-btn" id="undoBtn">
+                        <span>↶</span>
+                        Undo
+                    </button>
+
+                    <button type="button" class="control-btn restart-btn" id="restartBtn">
+                        <span>⟳</span>
+                        Restart
+                    </button>
+
+                    <button type="button" class="control-btn new-btn" id="newBtn">
+                        <span>＋</span>
+                        New Game
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- Instructions -->
+            <section class="instructions-card">
+                <div class="instructions-heading">
+                    <span>📖</span>
+                    <h3>How to Play</h3>
+                </div>
+
+                <div class="instruction-list">
+
+                    <div class="instruction-item">
+                        <span class="instruction-number">1</span>
+                        <p>Drag a bottle onto another bottle to pour.</p>
+                    </div>
+
+                    <div class="instruction-item">
+                        <span class="instruction-number">2</span>
+                        <p>You can pour only when the destination is empty or has the same top color.</p>
+                    </div>
+
+                    <div class="instruction-item">
+                        <span class="instruction-number">3</span>
+                        <p>Sort all colors so each bottle contains only one color.</p>
+                    </div>
+
+                    <div class="instruction-item">
+                        <span class="instruction-number">4</span>
+                        <p>Complete the puzzle to unlock your next level!</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with 💗 for puzzle lovers</p>
+            <span>Take a breath. Sort a color. Feel happy. 🌷</span>
+        </footer>
+
+    </div>
+
+    <!-- Winning Modal -->
+    <div class="modal-overlay" id="winModal">
+
+        <div class="modal-card">
+
+            <div class="win-animation">🎉</div>
+
+            <span class="modal-eyebrow">AMAZING WORK!</span>
+
+            <h2>Puzzle Completed!</h2>
+
+            <p>You sorted all the colors perfectly!</p>
+
+            <div class="win-stats">
+
+                <div class="win-stat">
+                    <span>YOUR MOVES</span>
+                    <strong id="finalMoves">0</strong>
+                </div>
+
+                <div class="win-stat">
+                    <span>COMPLETED LEVEL</span>
+                    <strong id="finalLevel">1</strong>
+                </div>
+
+            </div>
+
+            <button type="button" class="continue-btn" id="continueBtn">
+                Next Level <span>→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
